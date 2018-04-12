@@ -1,0 +1,14 @@
+Use vocabulary
+
+Create table Single_word
+(word	varchar(50) not null,
+frequent	int,
+primary key(word));
+
+Create table Double_collocation
+(First_word	varchar(50) not null foreign key references Single_word(word),
+Second_word	varchar(50) not null foreign key references Single_word(word),
+frequent	int,
+reliability	float,
+primary key (First_word, Second_word)
+);
